@@ -20,9 +20,9 @@ const buildings = [
 function initMap() {
 
   //  MapOptions FEATURE (explicit requirement)
-  //  LatLng FEATURE (explicit requirement)
+  //  LatLng interface FEATURE (explicit requirement)
   const mapOptions = {
-    center: new google.maps.LatLng(34.239, -118.53), // LatLng FEATURE
+    center: new google.maps.setCenter({lat:34.239, lng:-118.53}), // LatLng interface FEATURE
     zoom: 17,
     //disabling UI and interactions for a more game-like experience
     disableDefaultUI: true,
