@@ -28,6 +28,7 @@ function initMap() {
     disableDefaultUI: true,
     gestureHandling: "greedy",
     clickableIcons: false,
+    disableDoubleClickZoom: true,
     // Custom map styles to hide labels and points of interest
     styles: [
       {
@@ -53,10 +54,14 @@ function initMap() {
     mapOptions
   );
   // Click event listener to handle user guesses
-  map.addListener("click", (event) => {
-    if (gameOver) return;
-    handleGuess(event.latLng);
-  });
+map.addListener("dblclick", (event) => {
+  if (gameOver) return;
+
+  // Prevent Google Maps default zoom on double click
+  event.stop();
+
+  handleGuess(event.latLng);
+});
   //
   loadLeaderboard();
   startRound();
