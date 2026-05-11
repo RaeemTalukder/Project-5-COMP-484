@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSUN Infinite GeoGuessr</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+
+  <div id="left-panel">
+
+    <h1>CSUN Infinite GeoGuessr</h1>
+    <!-- SCORE DISPLAY -->
+    <div id="score">
+      Score: <span id="score-value">0</span>
+    </div>
+
+    <p>
+      Guess the highlighted CSUN building.
+      One wrong answer ends the game.
+    </p>
+    <!-- GUESS BUTTONS -->
+    <div id="guess-buttons"></div>
+
+    <div id="message"></div>
+
+    <button id="restart-btn" onclick="restartGame()">
+      Restart Game
+    </button>
+    <!-- LEADERBOARD -->
+    <div id="leaderboard">
+      <h2>Top 5 Leaderboard</h2>
+      <ol id="leaderboard-list"></ol>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjffw9digVP4FTlec1PEhTOgunRN5wems&callback=initMap">
+</script>
+
+</body>
+</html>
