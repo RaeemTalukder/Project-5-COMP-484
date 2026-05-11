@@ -12,7 +12,7 @@ const buildings = [
   { name: "Bookstore", lat: 34.2378, lng: -118.5276 },
   { name: "Student Recreation Center", lat: 34.2408, lng: -118.5248 },
   { name: "University Student Union", lat: 34.2404, lng: -118.5260 },
-  { name: "Chaparral Hall", lat: 34.2420, lng: -118.5311 },
+  { name: "Chaparral Hall", lat: 34.2383, lng: -118.5271},
   { name: "Northridge Center", lat: 34.2380, lng: -118.5267 },
   { name: "Sustainability Center", lat: 34.2410, lng: -118.5266 }
 ];
