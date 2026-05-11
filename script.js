@@ -19,8 +19,8 @@ const buildings = [
 // Map Initialization FEATURE
 function initMap() {
 
-  //  MapOptions FEATURE (explicit requirement)
-  //  LatLng interface FEATURE (explicit requirement)
+  //  MapOptions FEATURE 
+
   const mapOptions = {
     center: new google.maps.LatLng(34.239, -118.53), // LatLng interface FEATURE
     zoom: 17,
@@ -91,12 +91,28 @@ function handleGuess(latLng) {
   });
   overlays.push(guessMarker);
 // Calculate the distance between the guess and the actual building
-  const distance = getDistanceMeters(
-    guessLat,
-    guessLng,
+function handleGuess(latLng) {
+
+  const guessLatLng = latLng;
+
+  const guessMarker = new google.maps.Marker({
+    position: guessLatLng,
+    map: map
+  });
+
+  overlays.push(guessMarker);
+
+  const currentLatLng = new google.maps.LatLng(
     currentBuilding.lat,
     currentBuilding.lng
   );
+
+  // NEW: spherical distance (meters)
+  const distance =
+    google.maps.geometry.spherical.computeDistanceBetween(
+      guessLatLng,
+      currentLatLng
+    );
 // Draw a circle around the actual building to show the acceptable area
   const circle = new google.maps.Circle({
     strokeColor: "#00ff00",
@@ -201,24 +217,8 @@ function restartGame() {
   clearMap();
   startRound();
 }
-// Utility function to calculate distance between two lat/lng points in meters
-function getDistanceMeters(lat1, lon1, lat2, lon2) {
 
-  const R = 6371000;
 
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(lat1 * Math.PI / 180) *
-    Math.cos(lat2 * Math.PI / 180) *
-    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-  return R * c;
-}
 //  Leaderboard FEATURE
 function saveScore(score) {
 
