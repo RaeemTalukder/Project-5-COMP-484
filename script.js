@@ -10,10 +10,10 @@ const buildings = [
   { name: "Sierra Hall", lat: 34.2387, lng: -118.5304 },
   { name: "Jacaranda Hall", lat: 34.2412, lng: -118.5299 },
   { name: "Bookstore", lat: 34.2378, lng: -118.5276 },
-  { name: "Student Recreation Center", lat: 34.2408, lng: -118.5248 },
-  { name: "University Student Union", lat: 34.2404, lng: -118.5260 },
-  { name: "Chaparral Hall", lat: 34.2420, lng: -118.5311 },
-  { name: "Northridge Center", lat: 34.2380, lng: -118.5267 },
+  { name: "Maple hall", lat: 34.23769149296919, lng: -118.53127097040351 },
+  { name: "Nordhoff Hall", lat: 34.23628685876091, lng: -118.53057123984614},
+  { name: "Chaparral Hall", lat: 34.23836710727865, lng: -118.52710832791206 },
+  { name: "Library", lat: 34.24009760346545, lng: -118.52933063419128},
   { name: "Sustainability Center", lat: 34.2410, lng: -118.5266 }
 ];
 // Map Initialization FEATURE
