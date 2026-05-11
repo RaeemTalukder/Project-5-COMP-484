@@ -7,12 +7,12 @@ let gameOver = false;
 const ACCEPTABLE_DISTANCE = 70;
 //Building Data FEATURE
 const buildings = [
-  { name: "Sierra Hall", lat: 34.2387, lng: -118.5304 },
+  { name: "Sierra Hall", lat: 34.23830812788065, lng: -118.53104201608687},
   { name: "Jacaranda Hall", lat: 34.2412, lng: -118.5299 },
   { name: "Bookstore", lat: 34.2378, lng: -118.5276 },
   { name: "Maple hall", lat: 34.23769149296919, lng: -118.53127097040351 },
   { name: "Nordhoff Hall", lat: 34.23628685876091, lng: -118.53057123984614},
-  { name: "Chaparral Hall", lat: 34.23836710727865, lng: -118.52710832791206 },
+  { name: "Chaparral Hall", lat:34.23836746749, lng: -118.52711829602815},
   { name: "Library", lat: 34.24009760346545, lng: -118.52933063419128},
   { name: "Sustainability Center", lat: 34.2410, lng: -118.5266 }
 ];
