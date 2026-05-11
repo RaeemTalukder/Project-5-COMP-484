@@ -9,20 +9,20 @@ const ACCEPTABLE_DISTANCE = 70;
 const buildings = [
   { name: "Sierra Hall", lat: 34.2387, lng: -118.5304 },
   { name: "Jacaranda Hall", lat: 34.2412, lng: -118.5299 },
-  { name: "Campus Store", lat: 34.2378, lng: -118.5276 },
-  { name: "Nordhoff Hall", lat: 34.2362, lng: -118.5304},
-  { name: "Maple Hall", lat: 34.236238943047766, lng: -118.53049552726442,
-  { name: "Chaparral Hall", lat: 34.2383, lng: -118.5271},
-  { name: "Sequoia Hall", lat: 34.240630180348674, lng: -118.52827840021506 },
+  { name: "Bookstore", lat: 34.2378, lng: -118.5276 },
+  { name: "Student Recreation Center", lat: 34.2408, lng: -118.5248 },
+  { name: "University Student Union", lat: 34.2404, lng: -118.5260 },
+  { name: "Chaparral Hall", lat: 34.2420, lng: -118.5311 },
+  { name: "Northridge Center", lat: 34.2380, lng: -118.5267 },
   { name: "Sustainability Center", lat: 34.2410, lng: -118.5266 }
 ];
 // Map Initialization FEATURE
 function initMap() {
 
-  //  MapOptions FEATURE 
-
+  //  MapOptions FEATURE (explicit requirement)
+  //  LatLng FEATURE (explicit requirement)
   const mapOptions = {
-    center: new google.maps.LatLng(34.239, -118.53), // LatLng interface FEATURE
+    center: new google.maps.LatLng(34.239, -118.53), // LatLng FEATURE
     zoom: 17,
     //disabling UI and interactions for a more game-like experience
     disableDefaultUI: true,
@@ -54,6 +54,7 @@ function initMap() {
     mapOptions
   );
   // Click event listener to handle user guesses
+// Double-click event listener to handle user guesses
 map.addListener("dblclick", (event) => {
   if (gameOver) return;
 
@@ -91,28 +92,12 @@ function handleGuess(latLng) {
   });
   overlays.push(guessMarker);
 // Calculate the distance between the guess and the actual building
-function handleGuess(latLng) {
-
-  const guessLatLng = latLng;
-
-  const guessMarker = new google.maps.Marker({
-    position: guessLatLng,
-    map: map
-  });
-
-  overlays.push(guessMarker);
-
-  const currentLatLng = new google.maps.LatLng(
+  const distance = getDistanceMeters(
+    guessLat,
+    guessLng,
     currentBuilding.lat,
     currentBuilding.lng
   );
-
-  // NEW: spherical distance (meters)
-  const distance =
-    google.maps.geometry.spherical.computeDistanceBetween(
-      guessLatLng,
-      currentLatLng
-    );
 // Draw a circle around the actual building to show the acceptable area
   const circle = new google.maps.Circle({
     strokeColor: "#00ff00",
@@ -217,8 +202,24 @@ function restartGame() {
   clearMap();
   startRound();
 }
+// Utility function to calculate distance between two lat/lng points in meters
+function getDistanceMeters(lat1, lon1, lat2, lon2) {
 
+  const R = 6371000;
 
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) *
+    Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+  return R * c;
+}
 //  Leaderboard FEATURE
 function saveScore(score) {
 
