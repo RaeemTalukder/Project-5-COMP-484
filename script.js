@@ -8,7 +8,7 @@ const ACCEPTABLE_DISTANCE = 70;
 //Building Data FEATURE
 const buildings = [
   { name: "Sierra Hall", lat: 34.23830812788065, lng: -118.53104201608687},
-  { name: "Jacaranda Hall", lat: 34.2412, lng: -118.5299 },
+  { name: "Jacaranda Hall", 34.24119682016486, lng: -118.5289230914783},
   { name: "Bookstore", lat: 34.2378, lng: -118.5276 },
   { name: "Maple hall", lat: 34.23769149296919, lng: -118.53127097040351 },
   { name: "Nordhoff Hall", lat: 34.23628685876091, lng: -118.53057123984614},
