@@ -9,7 +9,7 @@ const ACCEPTABLE_DISTANCE = 70;
 const buildings = [
   { name: "Sierra Hall", lat: 34.2387, lng: -118.5304 },
   { name: "Jacaranda Hall", lat: 34.2412, lng: -118.5299 },
-  { name: "Bookstore", lat: 34.2378, lng: -118.5276 },
+  { name: "Campus Store", lat: 34.2378, lng: -118.5276 },
   { name: "Student Recreation Center", lat: 34.2408, lng: -118.5248 },
   { name: "University Student Union", lat: 34.2404, lng: -118.5260 },
   { name: "Chaparral Hall", lat: 34.2383, lng: -118.5271},
