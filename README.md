@@ -2,6 +2,5 @@
 
 
  Primary api ref:
-
-Coordinates
-Map options
+latlang
+Mapoptions
