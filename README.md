@@ -2,5 +2,5 @@
 
 
  Primary api ref:
-latlang
+Spherical Namespace
 Mapoptions
