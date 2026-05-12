@@ -53,6 +53,7 @@ function initMap() {
     document.getElementById("map"),
     mapOptions
   );
+  window.initMap = initMap;
   // Click event listener to handle user guesses
 // Double-click event listener to handle user guesses
 map.addListener("dblclick", (event) => {
