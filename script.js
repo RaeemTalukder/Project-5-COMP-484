@@ -16,7 +16,7 @@ const buildings = [
   { name: "Library", lat: 34.24009760346545, lng: -118.52933063419128},
   { name: "Sustainability Center", lat: 34.2410, lng: -118.5266 }
 ];
-  window.initMap = initMap;
+
 // Map Initialization FEATURE
 function initMap() {
 
@@ -254,3 +254,4 @@ function loadLeaderboard() {
     list.appendChild(li);
   });
 }
+window.initMap = initMap;
