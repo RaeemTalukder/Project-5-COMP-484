@@ -16,6 +16,7 @@ const buildings = [
   { name: "Library", lat: 34.24009760346545, lng: -118.52933063419128},
   { name: "Sustainability Center", lat: 34.2410, lng: -118.5266 }
 ];
+  window.initMap = initMap;
 // Map Initialization FEATURE
 function initMap() {
 
@@ -53,7 +54,7 @@ function initMap() {
     document.getElementById("map"),
     mapOptions
   );
-  window.initMap = initMap;
+
   // Click event listener to handle user guesses
 // Double-click event listener to handle user guesses
 map.addListener("dblclick", (event) => {
@@ -68,6 +69,7 @@ map.addListener("dblclick", (event) => {
   loadLeaderboard();
   startRound();
 }
+
 // Game Logic FEATURE
 function startRound() {
 // Clear previous round's markers and overlays
